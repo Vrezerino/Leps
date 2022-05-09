@@ -1,6 +1,6 @@
 import ladybug from './ladybug.png';
 import './App.css';
-import './timer.css';
+import './PieTimer.css';
 import { useState } from 'react';
 const scream = require('./utils/scream').sound
 const pop = require('./utils/pop').sound
@@ -52,7 +52,14 @@ const App = () => {
 	if (!fail) {
 		return (
 			<div className='App'>
-				{score > 0 && <div className='timeDisplay'>Time: {time / 1000} sec</div>}
+				{
+					score > 0 &&
+					<>
+						<div className='timeDisplay'>Time: {time / 1000} sec</div>
+						{/* Adding a key to the element, React will properly re-mount it and update the CSS pie timer animation, when the key changes. */}
+						<div key={time} className='chart' style={{ animation: `timer ${time / 1000}s linear 1` }}></div>
+					</>
+				}
 				<div className='ladybugContainer'
 					onClick={clicked}
 					style={{ top: randomTop, left: randomLeft }}>

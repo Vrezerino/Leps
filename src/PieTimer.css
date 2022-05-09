@@ -1,0 +1,20 @@
+@property --percentage {
+  initial-value: 0%;
+  inherits: false;
+  syntax: "<percentage>";
+}
+
+.chart {
+	margin: 0 auto;
+  background: conic-gradient(rgba(255,0,0,0.05) var(--percentage), white 0);
+  border-radius: 50%;
+  width: 80vmin;
+  height: 80vmin;
+  animation: timer 3s linear 0 1;
+}
+
+@keyframes timer {
+  to {
+    --percentage: 100%;
+  }
+}
