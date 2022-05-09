@@ -1,0 +1,46 @@
+.App {
+	text-align: center;
+}
+
+@keyframes spin {
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+.ladybugContainer {
+	position: absolute;
+	top: 100px;
+	left: 100px;
+}
+
+img.ladybug, img.ladybugBig {
+	margin: 0px 0px 0px 4px;
+	-webkit-animation: spin 4s linear infinite;
+	-moz-animation: spin 4s linear infinite;
+	animation: spin 1s linear infinite;
+}
+
+img.ladybugBig {
+	margin-left: auto;
+  margin-right: auto;
+	animation: spin 0.2s linear infinite;
+}
+
+.timeDisplay {
+	font-size: 2em;
+	font-weight: bold;
+}
+
+h1, h2 {
+	text-align: center;
+}
+
+h1 {
+	font-size: 4em;
+}
+
+h2 {
+	font-size: 3em;
+}
