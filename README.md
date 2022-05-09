@@ -1,0 +1,1 @@
+Press on the ladybug to start playing. If you fail to press on time, prepare for a loud sound.
