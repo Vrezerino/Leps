@@ -33,9 +33,13 @@ const App = () => {
 		setRandomTop(getRandomPos(0, winHeight));
 		setRandomLeft(getRandomPos(0, winWidth));
 
-		// After each click, user has 0.1 sec less time to press on the ladybug, increasing hardness.
-		setTime(time - 100)
-		timeout();
+		// After each click, user has less time to press on the ladybug, increasing difficulty.
+		if (time > 1000) {
+			setTime(time - 100)
+		} else {
+			setTime(time - 50)
+		}
+		timeout(); // Set new timer with shorter timeout duration.
 	}
 
 	const newTry = () => {
