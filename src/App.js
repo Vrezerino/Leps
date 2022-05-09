@@ -35,7 +35,7 @@ const App = () => {
 		setRandomLeft(getRandomPos(0, winWidth));
 
 		// After each click, user has less time to press on the ladybug, increasing difficulty.
-		if (time > 1000) {
+		if (time > 1500) {
 			setTime(time - 100)
 		} else {
 			setTime(time - 50)
@@ -67,7 +67,7 @@ const App = () => {
 					score > 0 &&
 					<>
 						<div className='timeDisplay'>Time: {time / 1000} sec</div>
-						{/* Adding a key to the element, React will properly re-mount it and update the CSS pie timer animation, when the key changes. */}
+						{/* By adding a key to the element, React will properly re-mount it and update the CSS pie timer animation, when the key changes. */}
 						<div key={time} className='pie'></div>
 					</>
 				}
