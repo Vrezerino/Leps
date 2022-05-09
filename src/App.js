@@ -51,8 +51,9 @@ const App = () => {
 
 	if (!fail) {
 		let sheets = document.styleSheets;
-		let selector = '.pie::after';
+		const selector = '.pie::after';
 
+		// Update pie chart timer animation duration.
 		for (let sheet of sheets) {
 			for (let rule of sheet.cssRules) {
 				if (rule.selectorText === selector) {
