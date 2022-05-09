@@ -50,6 +50,17 @@ const App = () => {
 	}
 
 	if (!fail) {
+		let sheets = document.styleSheets;
+		let selector = '.pie::after';
+
+		for (let sheet of sheets) {
+			for (let rule of sheet.cssRules) {
+				if (rule.selectorText === selector) {
+					rule.style['animation'] = `pieAniAfter ${time / 1000}s linear 1`;
+				}
+			}
+		}
+
 		return (
 			<div className='App'>
 				{
@@ -57,7 +68,7 @@ const App = () => {
 					<>
 						<div className='timeDisplay'>Time: {time / 1000} sec</div>
 						{/* Adding a key to the element, React will properly re-mount it and update the CSS pie timer animation, when the key changes. */}
-						<div key={time} className='chart' style={{ animation: `timer ${time / 1000}s linear 1` }}></div>
+						<div key={time} className='pie'></div>
 					</>
 				}
 				<div className='ladybugContainer'
