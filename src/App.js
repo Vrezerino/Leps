@@ -57,6 +57,7 @@ const App = () => {
 					onClick={clicked}
 					style={{ top: randomTop, left: randomLeft }}>
 					<img src={ladybug}
+						draggable='false'
 						className='ladybug'
 						alt='ladybug'
 						width='30px'
@@ -72,6 +73,7 @@ const App = () => {
 				<h2>Score: {score}</h2>
 				{time < 100 && <h2>Also, you are insanely fast.</h2>}
 				<img src={ladybug}
+					draggable='false'
 					className='ladybugBig'
 					alt='ladybug'
 					width='80%'
