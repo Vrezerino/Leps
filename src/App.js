@@ -6,9 +6,6 @@ const scream = require('./utils/scream').sound
 const pop = require('./utils/pop').sound
 
 const App = () => {
-	scream.load();
-	pop.load();
-	
 	const winWidth = window.innerWidth;
 	const winHeight = window.innerHeight;
 
