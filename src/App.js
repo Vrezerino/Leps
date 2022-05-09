@@ -47,11 +47,15 @@ const App = () => {
 	if (!fail) {
 		return (
 			<div className='App'>
-				{score > 0 && <div className='timeDisplay'>Time: {time/1000} sec</div>}
+				{score > 0 && <div className='timeDisplay'>Time: {time / 1000} sec</div>}
 				<div className='ladybugContainer'
 					onClick={clicked}
 					style={{ top: randomTop, left: randomLeft }}>
-					<img src={ladybug} className='ladybug' alt='ladybug' width='30px' />
+					<img src={ladybug}
+						className='ladybug'
+						alt='ladybug'
+						width='30px'
+						style={{ animation: `spin {time/3100}s linear infinite;` }} />
 				</div>
 			</div>
 		)
@@ -61,7 +65,11 @@ const App = () => {
 			<div>
 				<h1>FAIL</h1>
 				<h2>Score: {score}</h2>
-				<img src={ladybug} className='ladybugBig' alt='ladybug' width='80%' onClick={() => newTry()} />
+				<img src={ladybug}
+					className='ladybugBig'
+					alt='ladybug'
+					width='80%'
+					onClick={() => newTry()} />
 			</div>);
 	}
 }
