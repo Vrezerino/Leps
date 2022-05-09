@@ -55,7 +55,7 @@ const App = () => {
 						className='ladybug'
 						alt='ladybug'
 						width='30px'
-						style={{ animation: `spin {time/3100}s linear infinite;` }} />
+						style={{ animation: `spin ${time/3100}s linear infinite` }} />
 				</div>
 			</div>
 		)
