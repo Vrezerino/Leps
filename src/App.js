@@ -70,6 +70,7 @@ const App = () => {
 			<div>
 				<h1>FAIL</h1>
 				<h2>Score: {score}</h2>
+				{time < 100 && <h2>Also, you are insanely fast.</h2>}
 				<img src={ladybug}
 					className='ladybugBig'
 					alt='ladybug'
