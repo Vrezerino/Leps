@@ -1,5 +1,6 @@
 import ladybug from './ladybug.png';
 import './App.css';
+import './timer.css';
 import { useState } from 'react';
 const scream = require('./utils/scream').sound
 const pop = require('./utils/pop').sound
