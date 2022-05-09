@@ -6,6 +6,9 @@ const scream = require('./utils/scream').sound
 const pop = require('./utils/pop').sound
 
 const App = () => {
+	scream.load();
+	pop.load();
+	
 	const winWidth = window.innerWidth;
 	const winHeight = window.innerHeight;
 
@@ -60,7 +63,7 @@ const App = () => {
 						className='ladybug'
 						alt='ladybug'
 						width='30px'
-						style={{ animation: `spin ${time/3100}s linear infinite` }} />
+						style={{ animation: `spin ${time / 3100}s linear infinite` }} />
 				</div>
 			</div>
 		)
