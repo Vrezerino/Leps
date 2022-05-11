@@ -71,7 +71,11 @@ const App = () => {
 						<div key={time} className='pie'></div>
 					</>}
 				<div className='ladybugContainer' onClick={clicked} style={{ top: randomTop, left: randomLeft }}>
-					{score === 0 && <><span className='clickText'>Click!</span><br /></>}
+					{score === 0 &&
+						<>
+							<span className='clickText'>Click!</span>
+							<br />
+						</>}
 					<img src={ladybug} draggable='false' className='ladybug' alt='ladybug' width='30px' style={{ animation: `spin ${time / 3100}s linear infinite` }} />
 				</div>
 			</div>
