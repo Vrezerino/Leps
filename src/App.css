@@ -15,6 +15,11 @@
 	left: 100px;
 }
 
+span.clickText {
+	font-size: small;
+	font-weight: bold;
+}
+
 img {
 	user-drag: none;
 	-webkit-user-drag: none;

@@ -64,23 +64,15 @@ const App = () => {
 
 		return (
 			<div className='App'>
-				{
-					score > 0 &&
+				{score > 0 &&
 					<>
 						<div className='timeDisplay'>Time: {time / 1000} sec</div>
 						{/* By adding a key to the element, React will properly re-mount it and update the CSS pie timer animation, when the key changes. */}
 						<div key={time} className='pie'></div>
-					</>
-				}
-				<div className='ladybugContainer'
-					onClick={clicked}
-					style={{ top: randomTop, left: randomLeft }}>
-					<img src={ladybug}
-						draggable='false'
-						className='ladybug'
-						alt='ladybug'
-						width='30px'
-						style={{ animation: `spin ${time / 3100}s linear infinite` }} />
+					</>}
+				<div className='ladybugContainer' onClick={clicked} style={{ top: randomTop, left: randomLeft }}>
+					{score === 0 && <><span className='clickText'>Click!</span><br /></>}
+					<img src={ladybug} draggable='false' className='ladybug' alt='ladybug' width='30px' style={{ animation: `spin ${time / 3100}s linear infinite` }} />
 				</div>
 			</div>
 		)
@@ -91,12 +83,7 @@ const App = () => {
 				<h1>FAIL</h1>
 				<h2>Score: {score}</h2>
 				{time < 300 && <h2>Also, you are insanely fast.</h2>}
-				<img src={ladybug}
-					draggable='false'
-					className='ladybugBig'
-					alt='ladybug'
-					width='80%'
-					onClick={() => newTry()} />
+				<img src={ladybug} draggable='false' className='ladybugBig' alt='ladybug' width='80%' onClick={() => newTry()} />
 			</div>);
 	}
 }
