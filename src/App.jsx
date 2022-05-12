@@ -9,19 +9,16 @@ const App = () => {
 	const winWidth = window.innerWidth;
 	const winHeight = window.innerHeight;
 
-	const getRandomPos = (min, max) => {
-		return Math.random() * (max - min - 50) + min;
-	}
+	const getRandomPos = (min, max) => Math.random() * (max - min - 50) + min;
 
 	const [randomTop, setRandomTop] = useState(getRandomPos(0, winHeight));
 	const [randomLeft, setRandomLeft] = useState(getRandomPos(0, winWidth));
 	const [fail, setFail] = useState(false); // Set to true when user fails to press/click on the ladybug in a given time.
-	const [time, setTime] = useState(3100); // 3.1 seconds is the initial time.
+	const [time, setTime] = useState(3100);
 	const [score, setScore] = useState(0); // Successful consecutive presses on the ladybug.
 	const [timer, setTimer] = useState(null); // Stored in state so it can be cleared.
 
 	const timeout = () => {
-		//console.log(time);
 		setTimer(setTimeout(() => {
 			setFail(true);
 		}, time));
@@ -35,11 +32,7 @@ const App = () => {
 		setRandomLeft(getRandomPos(0, winWidth));
 
 		// After each click, user has less time to press on the ladybug, increasing difficulty.
-		if (time > 1500) {
-			setTime(time - 100)
-		} else {
-			setTime(time - 50)
-		}
+		time > 1500 ? setTime(time - 100) : setTime(time - 50);
 		timeout(); // Set new timer with shorter timeout duration.
 	}
 
