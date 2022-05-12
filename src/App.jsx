@@ -49,6 +49,8 @@ const App = () => {
 		setTime(3100);
 	}
 
+	const ladyBugImage = (className, style, onClick) => <img src={ladybug} draggable='false' className={className} alt='ladybug' style={style} onClick={onClick} />;
+
 	if (!fail) {
 		let sheets = document.styleSheets;
 		const selector = '.pie::after';
@@ -76,7 +78,7 @@ const App = () => {
 							<span className='clickText'>Click!</span>
 							<br />
 						</>}
-					<img src={ladybug} draggable='false' className='ladybug' alt='ladybug' width='30px' style={{ animation: `spin ${time / 3100}s linear infinite` }} />
+					{ladyBugImage('ladybug', { animation: `spin ${time / 3100}s linear infinite` }, null)}
 				</div>
 			</div>
 		)
@@ -87,7 +89,7 @@ const App = () => {
 				<h1>FAIL</h1>
 				<h2>Score: {score}</h2>
 				{time < 300 && <h2>Also, you are insanely fast.</h2>}
-				<img src={ladybug} draggable='false' className='ladybugBig' alt='ladybug' width='80%' onClick={() => newTry()} />
+				{ladyBugImage('ladybugBig', null, newTry)}
 			</div>);
 	}
 }
