@@ -2,7 +2,7 @@ import ladybug from './ladybug.png';
 import './App.css';
 import './PieTimer.css';
 import { useState } from 'react';
-const scream = require('./utils/scream').sound
+//const scream = require('./utils/scream').sound
 const pop = require('./utils/pop').sound
 
 const App = () => {
@@ -76,7 +76,7 @@ const App = () => {
 			</div>
 		)
 	} else {
-		scream.play()
+		//scream.play()
 		return (
 			<div>
 				<h1>FAIL</h1>
